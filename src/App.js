@@ -9,6 +9,20 @@ class App extends Component {
       tasks: [],
     };
   }
+
+  handleChange = (e) => {
+    this.setState({
+      task: e.target.value,
+    });
+  };
+
+  onSubmitTask = (e) => {
+    e.preventDefault();
+    this.setState({
+      tasks: this.state.tasks.concat(this.state.task),
+      task: "",
+    });
+  };
   
   render() {
     const { task, tasks } = this.state;

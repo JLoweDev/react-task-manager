@@ -7,8 +7,8 @@ const Overview = (props) => {
 
   return (
     <ul>
-      {tasks.map((task) => {
-        return <li key={uniqid()}>{task}</li>;
+      {tasks.map((task, index) => {
+        return <li key={uniqid()}>{index+1}. {task}</li>;
       })}
     </ul>
   );

@@ -29,9 +29,9 @@ class App extends Component {
 
     return (
       <div>
-        <form>
+        <form onSubmit={this.onSubmitTask}>
           <label htmlFor="taskInput">Enter task</label>
-          <input type="text" id="taskInput"/>
+          <input type="text" id="taskInput" onChange={this.handleChange} value={this.state.task}/>
           <button type="submit">
             Add Task
           </button>

@@ -1,4 +1,5 @@
 
+import { render } from "@testing-library/react";
 import React from "react";
 import uniqid from "uniqid";
 
@@ -8,7 +9,7 @@ const Overview = (props) => {
   return (
     <ul>
       {tasks.map((task, index) => {
-        return <li key={uniqid()}>{index+1}. {task}<button>Del</button></li>;
+        return <li key={uniqid()}>{index+1}. {task}<span><button onClick={() => { tasks.splice(index, 1); }}>Del</button></span></li>;
       })}
     </ul>
   );
